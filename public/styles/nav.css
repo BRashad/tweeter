@@ -1,0 +1,36 @@
+nav {
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Bungee', cursive, sans-serif;
+  font-size: larger;
+  box-sizing: border-box;
+  background-color:#3D54A2;
+  height: 120px;
+  color: #f4f1ec;
+  margin: 1%;
+  padding: 3% 3% 5% 1.5em; 
+  border-radius: 5px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+ }
+  
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1em 1em 1em 1.5em; 
+}
+
+ .newTweet {
+   display: flex;
+   justify-content: flex-end;
+   font-size: 1rem;
+   font-family: sans-serif; 
+ }
+
+ #arrow {
+  display: flex;
+  font-size: 1.3rem;
+  color: red;
+ }
+
+ 
