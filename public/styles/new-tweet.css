@@ -19,7 +19,24 @@
 }
 
 #tweet-text {
-  border: 0;
-  border-bottom: 2px solid black;
+  border: none;
+  border-bottom: 5px solid black;
   background-color: #f4f1ec;
 }
+
+.counter {
+  float: right;
+  padding-top: 1rem; 
+  font-family: 'Bungee', cursive, sans-serif;
+}
+
+textarea:focus, input:focus{
+  outline: none;
+}
+
+.tweetbutton {
+  font-family: 'Bungee', cursive, sans-serif;
+  background-color: #3D54A2;
+  color: #f4f1ec;
+}
+
