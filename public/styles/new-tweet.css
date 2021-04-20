@@ -1,0 +1,25 @@
+.new-tweet {
+  display: flex;
+  width: 100vw;
+  height: 300px;
+  flex-direction: column;
+} 
+
+.tweetform {
+  display: flex;
+  flex-direction: column;
+}
+
+.input, #tweet-text, .tweetbutton {
+  margin-top: 15px;
+}
+
+.label {
+  font-family: sans-serif;
+}
+
+#tweet-text {
+  border: 0;
+  border-bottom: 2px solid black;
+  background-color: #f4f1ec;
+}
