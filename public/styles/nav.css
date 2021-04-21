@@ -15,7 +15,7 @@ nav {
   z-index: 9999;
  }
   
-.containerr {
+nav #nav-container {
   display: flex;
   flex-direction: column;
   align-items: center;
