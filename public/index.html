@@ -34,28 +34,25 @@
   <body>
     <!-- Top nav bar (fixed) -->
     <nav>
-
       <span>tweeter</span>
       <div class="containerr">
-        <span class="newTweet"><strong>Write &nbsp;</strong> a new tweet here</span>
+        <span class="newTweet"><strong>Write</strong> a new tweet here</span>
         <span id="arrow"><i class="fas fa-angle-double-down"></i></span>
       </div>  
-
     </nav>
-
-    <header class="header">
-      <div>
-          <img src="/images/profile-hex.png"> 
-      </div>
-      <br>
-      <div>
-          <h2>Your Name</h2>
-      </div>
-    </header>
-
+    <div class="headcontainer"> 
+      <header class="header">
+        <div>
+            <img src="/images/profile-hex.png"> 
+        </div>
+        <br>
+        <div>
+            <h2>Your Name</h2>
+        </div>
+      </header>
+    </div>  
     <!-- Page-specific (main) content here -->
     <main class="container">
-
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
         <form method="POST" action='/tweets' class="tweetform">
@@ -85,8 +82,6 @@
           </footer>
         </div>
       </section>
-
-
     </main>
   </body>
 </html>

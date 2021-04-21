@@ -5,20 +5,17 @@ $(document).ready(function() {
 
     const maxLength = 140;
     let inputLength = $(this).val().length;
-    let charactersLeft = maxLength - inputLength
+    let charactersLeft = maxLength - inputLength;
     
-    let counter = $(this).parent().children('.tweetb').children('.counter'); // or this way $(this).closest('someSelector').find('.counter')
+    let $counter = $(this).parent().children('.tweetb').children('.counter'); // or this way $(this).closest('someSelector').find('.counter')
 
-    counter.text(charactersLeft)
+    $counter.text(charactersLeft);
 
     if(charactersLeft < 0) {
-      counter.css( "color", "red");
+      $counter.css( "color", "red");
     } else {
-      counter.css( "color", "black");
+      $counter.css( "color", "black");
     };
-
-    //console.log();
-    //console.log(counter.text()); //grab the text/value
     
   });
   

@@ -2,15 +2,17 @@ nav {
   display: flex;
   justify-content: space-between;
   font-family: 'Bungee', cursive, sans-serif;
+  align-items: center;
   font-size: larger;
-  box-sizing: border-box;
   background-color:#3D54A2;
   height: 120px;
   color: #f4f1ec;
-  margin: 1%;
-  padding: 3% 3% 3% 1.5em; 
+  padding: 1.5em; 
   border-radius: 5px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  position: fixed;
+  width: 100%; /*specific width needs to be specified when position fixed used with FLEXBOX*/
+  z-index: 9999;
  }
   
 .containerr {
@@ -20,17 +22,13 @@ nav {
   padding: 1em 1em 1em 1.5em; 
 }
 
- .newTweet {
-   display: flex;
-   justify-content: flex-end;
-   font-size: 1rem;
-   font-family: sans-serif; 
+.newTweet {
+  font-size: 1rem;
+  font-family: sans-serif; 
  }
 
- #arrow {
-  display: flex;
+#arrow {
   font-size: 1.3rem;
   color: red;
  }
 
- 
