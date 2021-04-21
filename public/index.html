@@ -26,6 +26,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@1,300;1,600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
 
+    <!-- Timeago -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js" integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg==" crossorigin="anonymous"></script>
+
   </head>
 
   <body>
@@ -63,9 +66,23 @@
           </div>
         </form>
         <div id="tweetcontainer">
-          <header> </header>
+          <header class='tweetcontheader'> 
+            <div class="iconname">
+              <i class="fas fa-user"></i>
+              <h5 class="profilename">Your Name</h5>
+            </div>
+            <h5 class="username"id='username'>@yourname</h5>  
+          </header>
           <article> Once upon a time coding became popular even though initially most people thought that coding is boring and is only for NERDs. Nowadays even musicians code.</article>
-          <footer> </footer>
+          <hr>
+          <footer class="footer"> 
+            <p id="pastdate"> 11 days ago</p>
+            <div class="icons">
+              <i class="fas fa-flag"></i>
+              <i class="fas fa-sync-alt"></i>
+              <i class="fas fa-heart"></i>
+            </div>
+          </footer>
         </div>
       </section>
 
@@ -73,3 +90,5 @@
     </main>
   </body>
 </html>
+
+

@@ -2,6 +2,93 @@
   margin-top: 2em;
   border: 5px solid black;
   border-radius: 5px;
-  width: 100vw;
+  width: 90vw;
   height: 300px;
 }
+
+#tweetcontainer:hover {
+  box-shadow: 0 5px 15px rgba(223, 140, 16, 0.589);
+}
+
+#tweetcontainer::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+  box-shadow: 0 5px 15px rgba(223, 140, 16, 0.589);
+  transition: opacity 0.3s ease-in-out;
+}
+
+.tweetcontheader {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 1%;
+}
+
+.profilename {
+  padding-top: 37px;
+  margin: 0;
+  width: 7rem;
+}
+
+.username {
+  margin-right: 2.2%;
+}
+
+.iconname{
+  display: flex;
+  flex-direction: row;
+}
+
+.fa-user {
+  padding: 20px;
+  font-size: 50px;
+}
+
+article {
+  width: 89vw;
+  padding: 2%;
+}
+
+hr {
+  border-top: 5px solid black;
+  width: 85vw;
+}
+
+.footer {
+  margin-top: 1.5%;
+}
+
+#pastdate{
+  margin-top: 0%;
+  margin-left: 2.2%;
+  margin-bottom: 1%;
+}
+
+.icons {
+  display: flex;
+  flex-direction: row;
+  margin-right: 2.2%;
+  margin-bottom: 1%;
+  width: 7rem; 
+  justify-content: space-evenly;
+}
+
+.fas:hover {
+  color: orange;
+}
+ 
+.fas {
+  margin: 1%;
+}
+
+.footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+
