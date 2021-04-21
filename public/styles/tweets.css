@@ -1,0 +1,7 @@
+#tweetcontainer {
+  margin-top: 2em;
+  border: 5px solid black;
+  border-radius: 5px;
+  width: 100vw;
+  height: 300px;
+}
