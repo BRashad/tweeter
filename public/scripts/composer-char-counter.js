@@ -7,7 +7,7 @@ $(document).ready(function() {
     let inputLength = $(this).val().length;
     let charactersLeft = maxLength - inputLength
     
-    let counter = $(this).parent().children('.tweetb').children('.counter');
+    let counter = $(this).parent().children('.tweetb').children('.counter'); // or this way $(this).closest('someSelector').find('.counter')
 
     counter.text(charactersLeft)
 
@@ -19,10 +19,10 @@ $(document).ready(function() {
 
     //console.log();
     //console.log(counter.text()); //grab the text/value
-    //$(this).closest('someSelector').find('.counter')
+    
   });
   
-});
+}); 
 
 
 
