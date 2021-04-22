@@ -1,0 +1,34 @@
+/* Desktop styles */
+@media only screen and (min-width: 1024px) { 
+
+  body {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .headcontainer {
+    width: 35%;
+    margin-top: 7%;
+    margin-left: 5%;
+  }
+
+  .container {
+    width:50%;
+    margin-top: 15%;
+  }
+
+   #tweetline {
+    width: 95%;
+    font-size: 80%;
+  }
+
+  hr {
+    width: 95%;
+  }
+
+  .footer {
+    margin-top: 4%;
+    padding-bottom: 0;
+  }
+
+};
