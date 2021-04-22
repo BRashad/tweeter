@@ -26,7 +26,7 @@ $(document).ready(() => {
         </div>
         <h5 class="username"id='username'>${obj['user'].handle}</h5>  
       </header>
-      <article> ${obj['content'].text}</article>
+      <article> ${escape(obj['content'].text)}</article>
       <hr>
       <footer class="footer"> 
         <p id="pastdate"> <span class="need_to_be_rendered" datetime="2016-07-07T09:24:17Z">${'11 days ago'}</span></p>
@@ -52,23 +52,30 @@ $(document).ready(() => {
   renderTweets(data);
   
   const validator = (str) => {
-    if(str === null || str.length > 140 || str === '') {
+    if (str === null || str.length > 140 || str === '') {
       return null;
-    } 
+    }
     return true;
+  };
+
+  const escape = function(str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
   };
 
 
   $("#tweetform").on('submit', function(event) {
     event.preventDefault();
-    if(validator($('#tweet-text').val())){
+    let str = $('#tweet-text').val();
+    if (validator(str)) {
       let datastring = $("#tweetform").serialize();
       $.ajax("/tweets", { method: "POST", data: datastring })
-      .then(() => {
-        loadTweets();
-        //empty the input line after submitting tweet.
-        $('#tweet-text').val(''); 
-      });
+        .then(() => {
+          loadTweets();
+          //empty the input line after submitting tweet.
+          $('#tweet-text').val('');
+        });
     }
   });
 
