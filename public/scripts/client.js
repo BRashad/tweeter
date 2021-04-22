@@ -9,16 +9,16 @@ const data = [
 
 $(document).ready(() => {
 
-const renderTweets = function(tweets) {
-  for (let element of tweets) {
-    let $tweet = createTweetElement(element);
-    $('.maincontainer').prepend($tweet);
-  }
-}
+  const renderTweets = function(tweets) {
+    for (let element of tweets) {
+      let $tweet = createTweetElement(element);
+      $('.maincontainer').prepend($tweet);
+    }
+  };
 
-const createTweetElement = function(obj) {
+  const createTweetElement = function(obj) {
 
-  const $tweet = $(` <div class="tweetcontainer">
+    const $tweet = $(` <div class="tweetcontainer">
       <header class='tweetcontheader'> 
         <div class="iconname">
           <i class="fas fa-user"></i>
@@ -42,24 +42,33 @@ const createTweetElement = function(obj) {
   };
   const loadTweets = () => {
     $.ajax("/tweets", { method: "GET", dataType: 'json' })
-    .then((res) => {
-      console.log("RESPONSING",res);
-      renderTweets([res[res.length - 1]]);
-      console.log("I MADE IT");
-    });
+      .then((res) => {
+        console.log("RESPONSING",res);
+        renderTweets([res[res.length - 1]]);
+        console.log("I MADE IT");
+      });
   };
   
   renderTweets(data);
   
+  const validator = (str) => {
+    if(str === null || str.length > 140 || str === '') {
+      return null;
+    } 
+    return true;
+  };
+
+
   $("#tweetform").on('submit', function(event) {
     event.preventDefault();
-    let datastring = $("#tweetform").serialize();
-    console.log("EVENT CALLING",event)
-    $.ajax("/tweets", { method: "POST", data: datastring })
-    .then(() => {
-      loadTweets();
-      console.log("I MADE IT");
-    });
+    if(validator($('#tweet-text').val())){
+      let datastring = $("#tweetform").serialize();
+      $.ajax("/tweets", { method: "POST", data: datastring })
+      .then(() => {
+        loadTweets();
+        console.log("I MADE IT");
+      });
+    }
   });
 
 });
