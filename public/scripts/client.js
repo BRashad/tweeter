@@ -48,8 +48,14 @@ $(document).ready(() => {
   renderTweets(data);
   
   const validator = (str) => {
-    if (str === null || str.length > 140 || str === '') {
+    if (str === null || str === '') {
       return null;
+    }
+    if (str.length > 140) {
+      $('.errormessage').fadeIn(1000);
+      return;
+    } else {
+      $('.errormessage').fadeOut();
     }
     return true;
   };
@@ -60,7 +66,7 @@ $(document).ready(() => {
     return div.innerHTML;
   };
 
-  
+  let $counter = $(this).parent().children('.tweetb').children('.counter'); 
 
   $("#tweetform").on('submit', function(event) {
     event.preventDefault();
@@ -72,6 +78,7 @@ $(document).ready(() => {
           loadTweets();
           //empty the input line after submitting tweet.
           $('#tweet-text').val('');
+          $('.counter').text(140);
         });
     }
   });
