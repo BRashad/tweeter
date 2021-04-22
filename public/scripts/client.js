@@ -28,22 +28,14 @@ const data = [
   }
 ]
 
-const renderTweets = function(tweets) {
+$(document).ready(() => {
 
+const renderTweets = function(tweets) {
   for (let element of tweets) {
     let $tweet = createTweetElement(element);
-    $('.tweetcontainer').append($tweet);
+    $('.maincontainer').prepend($tweet);
   }
 }
-
-//grab existing tweets
-// const loadTweets = (done) => {
-//   $.ajax('tweets', { method: 'GET'})
-//   .then(res => done(res))
-// };
-
-// //renders on page load
-// loadTweets(renderTweets); 
 
 const createTweetElement = function(obj) {
 
@@ -69,42 +61,28 @@ const createTweetElement = function(obj) {
 
     return $tweet;
   };
-
-$(document).ready(function(){
-  renderTweets(data)
-});
-
-
-const validator = (str) => {
-  if(str === null || str.length > 140 || str === '') {
-    return null;
-  } 
-  let div = document.createElement('div');
-  div.appendChild(document.createTextNode(str));
-  return div.innerHTML();
-};
-
-  $("#tweetform").on('submit', function (event) {
+  const loadTweets = () => {
+    $.ajax("/tweets", { method: "GET", dataType: 'json' })
+    .then((res) => {
+      console.log("RESPONSING",res);
+      renderTweets([res[res.length - 1]]);
+      console.log("I MADE IT");
+    });
+  };
+  
+  renderTweets(data);
+  
+  $("#tweetform").on('submit', function(event) {
     event.preventDefault();
-    const validatedText = validator($('#tweet-text').val());
-    console.log('Button clicked, performing ajax call...');
-    $.ajax('/tweets/', { method: 'POST', data: validatedText })
-    .then(function (moreTweets) {
-      $('.tweetcontainer').empty();
-      //loadTweets(renderTweets);
-      $('.counter').val(140);
-      $('#tweet-text').val('');
+    let datastring = $("#tweetform").serialize();
+    console.log("EVENT CALLING",event)
+    $.ajax("/tweets", { method: "POST", data: datastring })
+    .then(() => {
+      loadTweets();
+      console.log("I MADE IT");
     });
   });
 
+});
 
 
-
-// $(".tweetform").on("submit", function (event) {
-//   event.preventDefault();
-
-//   $.ajax({
-//     tweets: tweets,
-//     method: "POST",
-//   })
-// });
