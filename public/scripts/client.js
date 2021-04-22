@@ -66,7 +66,8 @@ $(document).ready(() => {
       $.ajax("/tweets", { method: "POST", data: datastring })
       .then(() => {
         loadTweets();
-        console.log("I MADE IT");
+        //empty the input line after submitting tweet.
+        $('#tweet-text').val(''); 
       });
     }
   });
