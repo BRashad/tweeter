@@ -15,7 +15,7 @@ $(document).ready(() => {
   };
 
   const createTweetElement = function(obj) {
-
+    console.log(obj);
     const $tweet = $(` <div class="tweetcontainer">
       <header class='tweetcontheader'> 
         <div class="iconname">
