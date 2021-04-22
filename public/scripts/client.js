@@ -3,9 +3,7 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
-const data = [
- 
-];
+const data = [];
 
 $(document).ready(() => {
 
@@ -29,7 +27,7 @@ $(document).ready(() => {
       <article> ${escape(obj['content'].text)}</article>
       <hr>
       <footer class="footer"> 
-        <p id="pastdate"> <span class="need_to_be_rendered" datetime="2016-07-07T09:24:17Z">${'11 days ago'}</span></p>
+        <p id="pastdate"> <span class="need_to_be_rendered" datetime="2016-07-07T09:24:17Z">${'11 days ago'}</span></p> 
         <div class="icons">
           <i class="fas fa-flag"></i>
           <i class="fas fa-sync-alt"></i>
@@ -43,9 +41,7 @@ $(document).ready(() => {
   const loadTweets = () => {
     $.ajax("/tweets", { method: "GET", dataType: 'json' })
       .then((res) => {
-        console.log("RESPONSING",res);
         renderTweets([res[res.length - 1]]);
-        console.log("I MADE IT");
       });
   };
   
@@ -64,6 +60,7 @@ $(document).ready(() => {
     return div.innerHTML;
   };
 
+  
 
   $("#tweetform").on('submit', function(event) {
     event.preventDefault();
@@ -78,7 +75,6 @@ $(document).ready(() => {
         });
     }
   });
-
 });
 
 
