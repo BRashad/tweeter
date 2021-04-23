@@ -6,6 +6,10 @@
 
 $(document).ready(() => {
 
+  $("#arrow").on('click', function(){
+    $(".new-tweet").fadeToggle(1000);
+  });
+
   const renderTweets = function(tweets) {
     for (let element of tweets) {
       let $tweet = createTweetElement(element);
@@ -41,8 +45,6 @@ $(document).ready(() => {
   const loadTweets = () => {
     $.ajax("/tweets", { method: "GET", dataType: 'json' })
       .then((res) => {
-        //console.log(res)
-        //renderTweets([res[res.length - 1]]);
         renderTweets(res);
       });
   };
