@@ -9,4 +9,6 @@
   background-color: rgba(78, 67, 67, 0.829);
   background-image: url(/images/background.png);
   border-radius: 5px;
+  margin: 0% 5%;
+  width: calc(100% - 10%);
 }

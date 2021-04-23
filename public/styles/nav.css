@@ -2,6 +2,7 @@ nav {
   display: flex;
   justify-content: space-between;
   font-family: 'Bungee', cursive, sans-serif;
+  margin: 1%;
   align-items: center;
   font-size: larger;
   background-color:#3D54A2;
@@ -13,6 +14,8 @@ nav {
   position: fixed;
   width: 100%; /*specific width needs to be specified when position fixed used with FLEXBOX*/
   z-index: 9999;
+  margin: 0% 5%;
+  width: calc(100% - 10%);
  }
   
 nav #nav-container {
