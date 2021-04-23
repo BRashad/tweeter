@@ -4,13 +4,6 @@ Tweeter is a simple, single-page Twitter clone.
 We developed the front-end part using HTML, CSS, jQuery and JS.
 
 
-Desktop view
-
-![Desktop view](/images/logo.png)
-
-Tablet view
-![Tablet view](/images/logo.png)
-
 ## Getting Started
 
 1. Fork this repository, then clone your fork of this repository.
