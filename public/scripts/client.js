@@ -3,7 +3,6 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
-//const data = [];
 
 $(document).ready(() => {
 
@@ -14,7 +13,6 @@ $(document).ready(() => {
     }
   };
   
-
   const createTweetElement = function(obj) {
     console.log(obj);
     const $tweet = $(` <div class="tweetcontainer">
@@ -39,6 +37,7 @@ $(document).ready(() => {
 
     return $tweet;
   };
+
   const loadTweets = () => {
     $.ajax("/tweets", { method: "GET", dataType: 'json' })
       .then((res) => {
@@ -68,7 +67,6 @@ $(document).ready(() => {
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
   };
-
 
   $("#tweetform").on('submit', function(event) {
     event.preventDefault();
