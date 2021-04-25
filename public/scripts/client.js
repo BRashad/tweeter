@@ -12,7 +12,7 @@ $(document).ready(() => {
 
   // tweet rendering
   const renderTweets = function(tweets) {
-    for (let element of tweets) {
+    for (const element of tweets) {
       let $tweet = createTweetElement(element);
       $('.maincontainer').prepend($tweet);
     }
@@ -83,9 +83,9 @@ $(document).ready(() => {
   // if input passed through the validation, empty th input field after tweet, character counter and load tweets
   $("#tweetform").on('submit', function(event) {
     event.preventDefault();
-    let str = $('#tweet-text').val();
+    const str = $('#tweet-text').val();
     if (validator(str)) {
-      let datastring = $("#tweetform").serialize();
+      const datastring = $("#tweetform").serialize();
       $.ajax("/tweets", { method: "POST", data: datastring })
         .then(() => {
           $('.maincontainer').empty();
