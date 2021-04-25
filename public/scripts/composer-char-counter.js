@@ -1,5 +1,6 @@
 $(document).ready(function() {
-  // --- our code goes here ---
+
+  // this code is for counting the number of characters input into tweeter input field
 
   $('#tweet-text').on("input", function(input) {
 
@@ -7,10 +8,12 @@ $(document).ready(function() {
     let inputLength = $(this).val().length;
     let charactersLeft = maxLength - inputLength;
     
-    let $counter = $(this).parent().children('.tweetb').children('.counter'); // or this way $(this).closest('someSelector').find('.counter')
+    let $counter = $(this).parent().children('.tweetb').children('.counter'); 
 
     $counter.text(charactersLeft);
 
+    // color swtich when character limit reached
+    
     if(charactersLeft < 0) {
       $counter.css( "color", "red");
     } else {

@@ -6,10 +6,11 @@
 
 $(document).ready(() => {
 
-  $("#arrow").on('click', function(){
+  $("#arrow").on('click', function() {
     $(".new-tweet").fadeToggle(1000);
   });
 
+  // tweet rendering
   const renderTweets = function(tweets) {
     for (let element of tweets) {
       let $tweet = createTweetElement(element);
@@ -17,8 +18,9 @@ $(document).ready(() => {
     }
   };
   
+  // tweets html snippet rendering for each new tweet
   const createTweetElement = function(obj) {
-    console.log(obj);
+
     const $tweet = $(` <div class="tweetcontainer">
       <header class='tweetcontheader'> 
         <div class="iconname">
@@ -42,6 +44,7 @@ $(document).ready(() => {
     return $tweet;
   };
 
+  // tweets loading in general and upon refresh
   const loadTweets = () => {
     $.ajax("/tweets", { method: "GET", dataType: 'json' })
       .then((res) => {
@@ -51,10 +54,16 @@ $(document).ready(() => {
   
   loadTweets();
   
+  // validation of use cases such as null, no entry and more characters than allowed
+  // error messages upon meeting validation criteria
   const validator = (str) => {
     if (str === null || str === '') {
+      $('.errormessageemptyfield').fadeIn(1000);
       return null;
+    } else {
+      $('.errormessageemptyfield').fadeOut();
     }
+
     if (str.length > 140) {
       $('.errormessage').fadeIn(1000);
       return;
@@ -63,13 +72,15 @@ $(document).ready(() => {
     }
     return true;
   };
-
+  // timeago code snippet for reflecting time past since tweet
   const escape = function(str) {
     let div = document.createElement("div");
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
   };
 
+  // POST request with the following conditions:
+  // if input passed through the validation, empty th input field after tweet, character counter and load tweets
   $("#tweetform").on('submit', function(event) {
     event.preventDefault();
     let str = $('#tweet-text').val();

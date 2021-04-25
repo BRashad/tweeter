@@ -47,6 +47,7 @@
 
 article {
   padding: 2%;
+  overflow-wrap: break-word;
 }
 
 hr {

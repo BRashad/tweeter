@@ -19,6 +19,12 @@
   display: none;
 }
 
+.errormessageemptyfield {
+  color: red;
+  font-weight: bold;
+  display: none;
+}
+
 .input, #tweet-text, .tweetbutton {
   margin-top: 15px;
 }
